@@ -11,11 +11,33 @@ Open ArcMap. Go to `Start` > `Programs` > `ArcGIS` > `ArcMap`. A dialogue box sh
 
 ![t1-2.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_2.PNG)
 
-To Add Data to the map project, click on the `Add Data` button on the toolbar, shown below. A dialogue will appear, allowing you to navigate to the data files you want to add as layers of your map.
+To connect ArcMap to your working directory, click on the `Catalog` tab (all the way to the right of the data frame), when you click on it, the catalog dialog box will expand. Click the pushpin/thumbtack icon (it’s small) in the right corner of the catalog dialog box
+(by the X).
+
+![t1-2-1.png](https://github.com/alisaalias/gis_tutorials/blob/50374381d33d00ceb24a3403c195723b7a7666e0/Images/Tutorial_01/t1-2-1.PNG)
+
+Click on the icon with a folder and a plus sign. `Folder connections` should appear in the menu. Click the plus sign (+) next to `folder connections`. Select the folder where your files are located on your computer, i.e. the file path.
+
+You should see several shapefile icons for the files of the PLUTO map, parks, and water. Drag and drop each shapefile into the white space in the data frame. You should see list of the shapefiles show up in the Table of Contents dialog box on the left
+hand side of the interface (with the box checked). If any boxes are unchecked, check the boxes next to each layer.
+
+Alternatively, to Add Data to the map project, you can also click on the `Add Data` button on the toolbar, shown below. A dialogue will appear, allowing you to navigate to the data files you want to add as layers of your map.
+
+![t1_3.png](https://github.com/alisaalias/gis_tutorials/blob/50374381d33d00ceb24a3403c195723b7a7666e0/Images/Tutorial_01/t1_3.png)
+
+To see the data associated with each shapefile, right click on the layer name and choose `Open Attribute Table.` For the PLUTO layer, you will see there is a spreadsheet/table with many rows and columns. 
+
+![t1-2_2.png](https://github.com/alisaalias/gis_tutorials/blob/50374381d33d00ceb24a3403c195723b7a7666e0/Images/Tutorial_01/t1-2_2.png)
+
+Each row represents a polygon of one building footprint. The columns contain geographic information about each building, but also additional information. For example, the column "NumFloors" represents the number of floors in that building. 
+
+![t-2_3.png](https://github.com/alisaalias/gis_tutorials/blob/50374381d33d00ceb24a3403c195723b7a7666e0/Images/Tutorial_01/t1-2_3.png)
+
+Close the attribute table.
 
 ![t1-3.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_3.PNG)
 
-Once you have added data, you can zoom and pan using the buttons on the toolbar. Select tools allow you to make selections from the data features. The `identify` tool allows you to query individual features for their attribute data.
+Once you have added data/layers, you can zoom and pan using the buttons on the toolbar. Select tools allow you to make selections from the data features. The `identify` tool allows you to query individual features for their attribute data.
 
 ![t1-4.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_4.PNG)
 
