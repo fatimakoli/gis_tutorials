@@ -5,7 +5,7 @@
 * [Parks Properties](https://data.cityofnewyork.us/api/geospatial/rjaj-zgq7?method=export&format=Shapefile)
 * [Hydrography](https://data.cityofnewyork.us/api/geospatial/drh3-e2fd?method=export&format=Shapefile)
 
-Once you've downloaded each of the three folders, you will have to extract the files from each folder (these folders are zipped because of their size). Extract ALL the files to the same folder (you could create a new folder for this exercise called "Arc_Lab_1", etc.). Make sure all the files go into the same folder. Each zipped folder contains 6-8 files, and these files need to stay together!! 
+Once you've downloaded each of the three folders, you will have to extract the files from each folder (these folders are zipped because of their size). Extract **ALL** the files (from the three zipped folders) to the same folder (you could create a new folder for this exercise called "Arc_Lab_1", etc.). Make sure all the files go into that same folder. Each of the three zipped folders contains 6-8 files, and these files need to stay together!! 
 
 ![t1-1.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_1.PNG)
 
@@ -43,35 +43,34 @@ Once you have added data/layers, you can zoom and pan using the buttons on the t
 
 ![t1-4.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_4.PNG)
 
-You can arrange the ordering of the layers by stacking the data layer names in the `Display` tab of the `Table of Contents` on the left of the screen. The ordering of the layers in the `Table of Contents` will correspond to their ordering in the map. Below is an example. The open space layer is displayed above the building layer, which is in turn displayed above the water layer.
+You can arrange the ordering of the layers by stacking the data layer names in the `Display` tab of the `Table of Contents` on the left of the screen. The ordering of the layers in the `Table of Contents` will correspond to their ordering in the map. Below is an example. The open space (parks) layer is displayed above the building (PLUTO) layer, which is in turn displayed above the water layer.
 
 ![t1-5.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_5.png)
 
-To change the symbology of your layers, right-click on the layer name and choose `Properties`.
+Drag the building layer above the open space layer.
+
+To change the symbology of your layers, right-click on the layer name and choose `Properties`. A dialogue will appear. Under the `Symbology` tab, you will find the options for coloring or visualizing your data.
+
+Option A: To keep all features a single color, choose `Features` > `Single Symbol` on the left. You can change the color by clicking on the swatch. For example, make sure the Parks layer is symbolized as green and the water layer is symbolized as blue.
 
 ![t1-6.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_6.PNG)
 
-A dialogue will appear. Under the `Symbology` tab, you will find the options for coloring or visualizing your data.
-
-Option A: To keep all features a single color, choose `Features` > `Single Symbol` on the left. You can change the color by clicking on the swatch.
+Option B: To visualize your data based on a qualitative category, choose `Categories` on the left and specify (by clicking) the type of categorization. In the image below `Unique Values` is chosen. In the `Value Field` drop down menu, select the field by which you'd like to visualize your data. In the image below, the borough field was chosen. Click `Add All Values` to display the category values. You can change the color of your symbols by either using the Color Ramp drop-drop down menu or double-clicking on the swatches to the left of the `Values` list.
 
 ![t1-7.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_7.PNG)
 
-Option B: To visualize your data based on a qualitative category, choose `Categories` on the left and specify (by clicking) the type of categorization. In the image below `Unique Values` is chosen.
+Option C: To visualize your data based on numeric quantities, select `Quantities` on the left and specify (by clicking) the type of visualization. In the image below, `Graduated Colors` is chosen. In the `Value` drop-down menu, select the field by which you'd like to visualize your data. If appropriate, you can normalize your data by another quantity field by selecting it from the `Normalization` drop-down. You can change the color of your symbols by either using the Color Ramp drop-down menu or by double-clicking on the swatches on the left of the `Range` list. In the image below, the `NumFloors` value is chosen. You might get an error that the max sample size has been reached. The fix for this error is described in the following section.
 
 ![t1-8.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_8.PNG)
 
-In the `Value Field` drop down menu, select the field by which you'd like to visualize your data. In the image above, the school district field was chosen. Click `Add All Values` to display the category values. You can change the color of your symbols by either using the Color Ramp drop-drop down menu or double-clicking on the swatches to the left of the `Values` list.
-
-Option C: To visualize your data based on numeric quantities, select `Quantities` on the left and specify (by clicking) the type of visualization. In the image below, `Graduated Colors` is chosen.
+To change the number of displayed value ranges, you can select the number of classes from the `Classes` drop-down menu. By default, 5 classes are displayed and delineated using Jenks Natural Breaks algorithm. If you want to change this default, you can click on the `Classify…` button. A dialogue appears as below.
 
 ![t1-9.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_9.PNG)
 
-In the `Value` drop-down menu, select the field by which you'd like to visualize your data. If appropriate, you can normalize your data by another quantity field by selecting it from the `Normalization` drop-down. You can change the color of your symbols by either using the Color Ramp drop-down menu or by double-clicking on the swatches on the left of the `Range` list.
+To fix the sampling size error, click on the `Sampling...` button. In the `Data Sampling` pop up box, type 1000000 (one million) into the box next to `Maximum Sampling Size` and click `OK`.
 
-To change the number of displayed value ranges, you can select the number of classes from the `Classes` drop-down menu. By default, 5 classes are displayed and delineated using Jenks Natural Breaks algorithm. If you want to change this default, you can click on the `Classify…` button. A dialogue appears as below.
 
-Again, you can change the number of classes by using the `Classes` drop-down menu. You can change the method of classification by using the `Method` drop-down. Your options include manually classifying your data, equal interval, and standard deviation classification as well as some others. The histogram displays the distribution of your data, with blue vertical lines showing the breaks between classes. To manually classify the dataset, you can either move the blue break lines (by clicking and dragging them) or typing in the Break Values in the list to the right of the dialogue. On the upper right corner of the dialogue box, basic statistics corresponding to the data is displayed that can be useful in deciding how to visualize your data.
+You can change the number of classes by using the `Classes` drop-down menu. You can change the method of classification by using the `Method` drop-down. Your options include manually classifying your data, equal interval, and standard deviation classification as well as some others. The histogram displays the distribution of your data, with blue vertical lines showing the breaks between classes. To manually classify the dataset, you can either move the blue break lines (by clicking and dragging them) or typing in the Break Values in the list to the right of the dialogue. On the upper right corner of the dialogue box, basic statistics corresponding to the data is displayed that can be useful in deciding how to visualize your data.
 
 In all cases, clicking `OK` will save and display your new symbology.
 
