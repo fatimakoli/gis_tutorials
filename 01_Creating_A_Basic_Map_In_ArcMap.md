@@ -79,7 +79,7 @@ In all cases, clicking `OK` will save and display your new symbology.
 
 To create a map layout, switch your view from `Data View` to `Layout View` by clicking on the icon of a page in the lower left corner of the map window as below.
 
-![t1-10.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_10.PNG)
+![t1-10_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-10_new.png)
 
 The map window should now show you your map's data frame on a sheet of paper. You can adjust the size and location of the data frame by adjusting its bounding box.
 
@@ -89,9 +89,13 @@ A new set of tools to zoom and pan appears when you are in the `Layout View`. Th
 
 ![t1-11.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_11.PNG)
 
-You can add standard elements to your map through the `Insert` menu shown below. The `Legend`, `North Arrow`, `Scale Bar`, and `Scale Text` options each lead to dialogues that allow you to customize those map elements. To edit the layer titles for the legend, click on the layer value `NumFloors`, then click again (not a double click, a click... then a click i.e. how you would change the name of a file on your computer). Once you can edit the layer name, type in "Number of Floors". In the legend dialogue box, you can also select a border or background for your legend, or edit other stylistic elements.
+You can add standard elements to your map through the `Insert` menu shown below. The `Legend`, `North Arrow`, `Scale Bar`, and `Scale Text` options each lead to dialogues that allow you to customize those map elements. 
 
-![t1-12.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_12.png)
+![t1-12_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-12_new.png)
+
+To edit the layer titles for the legend, click on the layer value `NumFloors`, then click again (not a double click, a click... then a click i.e. how you would change the name of a file on your computer). Once you can edit the layer name, type in "Number of Floors". In the legend dialogue box, you can also select a border or background for your legend, or edit other stylistic elements.
+
+![t1-12_1.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-12_1.png)
 
 To edit the font and size of the title, click to add `Title` from the `Insert` menu, then type in the title (in this case, the title of the map could be "Morningside Heights buildings and parks"). Then once you've added the title, double click on the title text box to open the properties dialogue box for editing the title. Click on `Change Symbol...` to edit the font and size of the title text.
 
