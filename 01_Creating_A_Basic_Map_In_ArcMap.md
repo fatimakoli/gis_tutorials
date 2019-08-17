@@ -1,9 +1,11 @@
 # Creating a Basic Map in ArcMap
 
-*This tutorial will cover some basics of the ArcMap user interface, using map symbology, and creating a map layout. In this tutorial we use data similar to the following, although any other GIS datasets will also work:*
-* [PLUTO](http://www1.nyc.gov/site/planning/data-maps/open-data.page)
-* [Parks Properties](https://data.cityofnewyork.us/City-Government/Parks-Properties/rjaj-zgq7/data)
-* [Hydrography](https://data.cityofnewyork.us/Environment/Hydrography/drh3-e2fd)
+*This tutorial will cover some basics of the ArcMap user interface, using map symbology, and creating a map layout. In this tutorial we use the following data (right click on each link and select "open link in a new tab" to download the files), although any other GIS datasets will also work:*
+* [PLUTO](https://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/nyc_mappluto_18v2_1_shp.zip)
+* [Parks Properties](https://data.cityofnewyork.us/api/geospatial/rjaj-zgq7?method=export&format=Shapefile)
+* [Hydrography](https://data.cityofnewyork.us/api/geospatial/drh3-e2fd?method=export&format=Shapefile)
+
+Once you've downloaded each of the three folders, you will have to extract the files from each folder (these folders are zipped because of their size). Extract ALL the files to the same folder (you could create a new folder for this exercise called "Arc_Lab_1", etc.). Make sure all the files go into the same folder. Each zipped folder contains 6-8 files, and these files need to stay together!! 
 
 ![t1-1.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_1.PNG)
 
