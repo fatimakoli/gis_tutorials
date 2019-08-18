@@ -47,8 +47,6 @@ You can arrange the ordering of the layers by stacking the data layer names in t
 
 ![t1-5_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-5_new.png)
 
-Drag the building layer above the open space layer.
-
 To change the symbology of your layers, right-click on the layer name and choose `Properties`. A dialogue will appear. Under the `Symbology` tab, you will find the options for coloring or visualizing your data.
 
 Option A: To keep all features a single color, choose `Features` > `Single Symbol` on the left. You can change the color by clicking on the swatch. For example, make sure the Parks layer is symbolized as green and the water layer is symbolized as blue.
@@ -79,7 +77,7 @@ In all cases, clicking `OK` will save and display your new symbology.
 
 To create a map layout, switch your view from `Data View` to `Layout View` by clicking on the icon of a page in the lower left corner of the map window as below.
 
-![t1-10_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-10_new.png)
+![t1-10_new1.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-10_new1.png)
 
 The map window should now show you your map's data frame on a sheet of paper. You can adjust the size and location of the data frame by adjusting its bounding box.
 
@@ -91,15 +89,19 @@ A new set of tools to zoom and pan appears when you are in the `Layout View`. Th
 
 You can add standard elements to your map through the `Insert` menu shown below. The `Legend`, `North Arrow`, `Scale Bar`, and `Scale Text` options each lead to dialogues that allow you to customize those map elements. 
 
-![t1-12_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-12_new.png)
+![t1-12_new1.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-12_new1.png)
 
 To edit the layer titles for the legend, click on the layer value `NumFloors`, then click again (not a double click, a click... then a click i.e. how you would change the name of a file on your computer). Once you can edit the layer name, type in "Number of Floors". In the legend dialogue box, you can also select a border or background for your legend, or edit other stylistic elements.
 
+![t1-12_new3.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-12_new3.png)
+
+To edit the font and size of the title, click to add `Title` from the `Insert` menu, then type in the title (in this case, the title of the map could be "Morningside Heights buildings and parks"). 
+
 ![t1-12_1.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-12_1.png)
 
-To edit the font and size of the title, click to add `Title` from the `Insert` menu, then type in the title (in this case, the title of the map could be "Morningside Heights buildings and parks"). Then once you've added the title, double click on the title text box to open the properties dialogue box for editing the title. Click on `Change Symbol...` to edit the font and size of the title text.
+Then once you've added the title, double click on the title text box to open the properties dialogue box for editing the title. Click on `Change Symbol...` to edit the font and size of the title text.
 
-![t1-13.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_13.PNG)
+![t1-13_new1.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-13_new1.png)
 
 You can change the position the elements you inserted into the page area.
 
