@@ -91,13 +91,15 @@ You can add standard elements to your map through the `Insert` menu shown below.
 
 ![t1-12_new1.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-12_new1.png)
 
-To edit the layer titles for the legend, click on the layer value `NumFloors`, then click again (not a double click, a click... then a click i.e. how you would change the name of a file on your computer). Once you can edit the layer name, type in "Number of Floors". In the legend dialogue box, you can also select a border or background for your legend, or edit other stylistic elements.
+To edit the layer titles for the legend, click on the layer value `NumFloors`, then click again (not a double click, a click... then a click i.e. how you would change the name of a file on your computer). Once you can edit the layer name, type in "Number of Floors".  When you open the legend dialogue box, make sure you move the park and water layers to the left box, so that the PLUTO layer is the only layer listed under `Legend Items`.
+
+![t1-12_1.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-12_1.png)
+
+In the legend dialogue box, you can also select a border or background for your legend, or edit other stylistic elements.
 
 ![t1-12_new3.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-12_new3.png)
 
 To edit the font and size of the title, click to add `Title` from the `Insert` menu, then type in the title (in this case, the title of the map could be "Morningside Heights buildings and parks"). 
-
-![t1-12_1.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-12_1.png)
 
 Then once you've added the title, double click on the title text box to open the properties dialogue box for editing the title. Click on `Change Symbol...` to edit the font and size of the title text.
 
@@ -105,6 +107,8 @@ Then once you've added the title, double click on the title text box to open the
 
 You can change the position the elements you inserted into the page area.
 
-![t1-14.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_14.PNG)
+![t1-14_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-14_new.png)
 
 When you are finished with your map, you can export it to a variety of formats. Go to `File` > `Export Map…` to reach a dialogue box where you can choose your export format and save your map. You will find that you can export your map as an image file (i.e. JPG) for immediate use or as a vector-based file (i.e. EPS) for further graphics editing.
+
+You made a map!!
