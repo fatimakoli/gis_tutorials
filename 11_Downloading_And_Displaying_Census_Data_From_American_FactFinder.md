@@ -163,4 +163,8 @@ Adjust colors and add legends, scale bars, and other graphics to complete your m
 
 ![t11-26.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_11/t11-26.png)
 
+## Tutorial Deliverable
+
+Repeat these steps, but choose a *different* Census variable (other than Gross Rent) to visualize. You can choose to select a specific borough or visualize the Census data by tract for all 5 boroughs. 
+
 Source: American FactFinder, United States Census Bureau. U.S. Department of Commerce, 2000 http://factfinder.census.gov/
