@@ -135,7 +135,7 @@ Now we are ready to join the tables. Ensure the `Keep all records` option is che
 
 ![t11-20.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_11/t11-20.png)
 
-You can now open to attribute table of the TIGER file to view the joined dataset (right click on the census tracts layer and select `Open Attribute Table`).
+You can now open the attribute table of the TIGER file to view the joined dataset (right click on the census tracts layer and select `Open Attribute Table`).
 
 ![t11-21_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-21_new.png)
 
@@ -151,13 +151,13 @@ Once the new shapefile (only New York County tracts) is displayed, you can turn 
 
 ## Displaying and Visualizing Census Data
 
-![t11-24.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_11/t11-24.png)
-
 To graphically analyze the dataset you created and joined we can symbolize the data using the `Symbology` under the `Layer Properties`.
 
-![t11-25.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_11/t11-25.png)
+![t11-24_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-24_new.png)
 
 Right click on the newly added layer and select `Properties`. Under the tab named `Symbology`, select the “Quantities” on the left sidebar and choose `Graduated colors`. Choose the variable for the field `Gross_Rent`. You can choose a color ramp or create a custom ramp by right clicking on the color ramp. If you want to classify your data using specific breaks, click the `Classify` button to choose your selected method of breaks. You can also format labels to remove decimal points or change the significant figures of the displayed data. Select `Apply` and then `OK` and your shapefile will be symbolized using your specified parameters.
+
+![t11-25_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-25_new.png)
 
 Adjust colors and add legends, scale bars, and other graphics to complete your map.
 
