@@ -105,7 +105,7 @@ Once the file is open, ensure the following:
   * Ensure there are no special characters (periods, commas, ampersands, hyphens, etc.) in the headings (e.g. rename `GEO.id2` to `GEO_id2`).
   * Delete any extra columns of data that you do not need in your dataset.
  
-![t11-16_1.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-16_1.png)
+![t11-16_1_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-16_1_new.png)
 
 *Note: If you downloaded your TIGER data from the TIGER website, you will have to change the column in your Excel file including your `GEO_id2` field to a `Text` type. This will make it possible to join in ArcMap. If you downloaded the TIGER data from the `Create Map` feature on the FactFinder website, you can leave this column as a `General` or `Number` type.*
 
