@@ -13,7 +13,7 @@ Open ArcMap. Go to `Start` > `Programs` > `ArcGIS` > `ArcMap`. A dialogue box sh
 
 ![t1-2.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_2.PNG)
 
-To connect ArcMap to your working directory, click on the `Catalog` tab (all the way to the right of the data frame), when you click on it, the catalog dialog box will expand. Click the pushpin/thumbtack icon (it’s small) in the right corner of the catalog dialog box
+To connect ArcMap to your working directory, click on the `Catalog` tab (all the way to the right of the data frame), when you click on it, the catalog dialog box will expand (You may have to open the catalog tab using Windows > Catalog). Click the pushpin/thumbtack icon (it’s small) in the right corner of the catalog dialog box
 (by the X).
 
 ![t1-2-1.png](https://github.com/alisaalias/gis_tutorials/blob/50374381d33d00ceb24a3403c195723b7a7666e0/Images/Tutorial_01/t1-2-1.PNG)
@@ -81,17 +81,17 @@ To create a map layout, switch your view from `Data View` to `Layout View` by cl
 
 The map window should now show you your map's data frame on a sheet of paper. You can adjust the size and location of the data frame by adjusting its bounding box.
 
-A new set of tools to zoom and pan appears when you are in the `Layout View`. The `Data View` zoom and pan tools are still active and will affect the map within the data frame. To zoom and pan on the page without affecting the map, use the (page) `Zoom` and `Pan` toolbar. Zoom in so that Morningside Heights shows in the layout view. 
+A new set of tools to zoom and pan appears when you are in the `Layout View`. The `Data View` zoom and pan tools are still active and will affect the map within the data frame. Zoom in so that Morningside Heights shows in the layout view. To zoom and pan on the page without affecting the map, use the (page) `Zoom` and `Pan` toolbar. 
 
 **Note** about zooming/panning: in general, but also specifically in this case, when you are visualizing a lot of data (e.g. the PLUTO shapefile containing all buildings in NYC), it may take ArcMap some time to redraw the map each time you zoom or pan or move the map. Many times, ArcMap will time out and will not finish redrawing the map. If you move/pan/zoom the map too much, ArcMap is likely to crash.
 
 ![t1-11.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_01/t1_11.PNG)
 
-You can add standard elements to your map through the `Insert` menu shown below. The `Legend`, `North Arrow`, `Scale Bar`, and `Scale Text` options each lead to dialogues that allow you to customize those map elements. 
+Add standard elements to your map through the `Insert` menu shown below. The `Legend`, `North Arrow`, `Scale Bar`, and `Scale Text` options each lead to dialogues that allow you to customize those map elements. 
 
 ![t1-12_new1.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-12_new1.png)
 
-To edit the layer titles for the legend, click on the layer value `NumFloors`, then click again (not a double click, a click... then a click i.e. how you would change the name of a file on your computer). Once you can edit the layer name, type in "Number of Floors".  When you open the legend dialogue box, make sure you move the park and water layers to the left box, so that the PLUTO layer is the only layer listed under `Legend Items`.
+To edit the layer titles for the legend, click on the layer value `NumFloors` in the table of contents to the left, then click again (not a double click, a click... then a click i.e. how you would change the name of a file on your computer). Once you can edit the layer name, type in "Number of Floors".  When you open the legend dialogue box, make sure you move the park and water layers to the left box, so that the PLUTO layer is the only layer listed under `Legend Items`.
 
 ![t1-12_1.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_01/t1-12_1.png)
 
@@ -111,4 +111,4 @@ You can change the position the elements you inserted into the page area.
 
 When you are finished with your map, you can export it to a variety of formats. Go to `File` > `Export Map…` to reach a dialogue box where you can choose your export format and save your map. You will find that you can export your map as an image file (i.e. JPG) for immediate use or as a vector-based file (i.e. EPS) for further graphics editing.
 
-You made a map!!
+You made a map!! To turn in: Export your map to a pdf file. Save the file with your name and week 2 lab in the filename, and upload it to courseworks.
