@@ -20,7 +20,7 @@ Click on `Geographies`. This will open a new dialog box titled `Select Geographi
 
 ![t11-2.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_11/t11-2.png)
 
-You can browse the tabs at the top of the dialog box to browse by List, Name, Address, or Map. We will use the List tab. Make sure the `Select from` option is checked to `most requested geographic types`. For this tutorial we will select `Census Tract` from the `Select a geographic type` dropdown menu. We will select New York from the `Select a state` dropdown menu. We will select New York from the “Select a county” dropdown menu. Select `All Census Tracts within New York County, New York`. Next click `Add To Your Selections` at the bottom of the dialog box.
+You can browse the tabs at the top of the dialog box to browse by List, Name, Address, or Map. We will use the List tab. Make sure the `Select from` option is checked to `most requested geographic types`. For this tutorial we will select `Census Tract` from the `Select a geographic type` dropdown menu. We will select New York from the `Select a state` dropdown menu. Select `All Census Tracts within New York`. Next click `Add To Your Selections` at the bottom of the dialog box.
 
 ![t11-3.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_11/t11-3.png)
 
@@ -111,7 +111,7 @@ Once the file is open, ensure the following:
 
 ![t11-16_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-16_new.png)
 
-Once the modifications to the table are made, save the file in an Excel Workbook `.xlsx` format (Do not use Excel 97-2003). Close the Excel file after saving.
+Once the modifications to the table are made, save the file in an Excel Workbook `.xls` format (Excel 97-2003 Workbook). Close the Excel file after saving.
 
 ## Joining Excel Table to TIGER Shapefile in ArcMap
 
@@ -139,7 +139,7 @@ You can now open the attribute table of the TIGER file to view the joined datase
 
 ![t11-21_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-21_new.png)
 
-We will now create a selection to include only Census Tracts in New York County. From the top menu bar go to `Select` > `Select by Attributes`. In the dialog box that appears we will build the following formula: "tl_2014_36_tract.COUNTYFP" = '061'. First, double click on "tl_2014_36_tract.COUNTYFP" to move that field to the `SELECT * FROM` formula builder box. Next, click on the equals (=) sign. Finally, click on `Get Unique Values`and scroll to '0.61', then double click on that number. Click `Apply` then `OK`. This will select only the Census tracts with the county ID number for New York County.
+We will now create a selection to include only Census Tracts in New York County. From the top menu bar go to `Select` > `Select by Attributes`. In the dialog box that appears we will build the following formula: "tl_2017_36_tract.COUNTYFP" = '061'. First, double click on "tl_2017_36_tract.COUNTYFP" to move that field to the `SELECT * FROM` formula builder box. Next, click on the equals (=) sign. Finally, click on `Get Unique Values`and scroll to '0.61', then double click on that number. Click `Apply` then `OK`. This will select only the Census tracts with the county ID number for New York County.
 
 ![t11-22_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-22_new.png)
 
@@ -155,7 +155,7 @@ To graphically analyze the dataset you created and joined we can symbolize the d
 
 ![t11-24_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-24_new.png)
 
-Right click on the newly added layer and select `Properties`. Under the tab named `Symbology`, select the “Quantities” on the left sidebar and choose `Graduated colors`. Choose the variable for the field `Gross_Rent`. You can choose a color ramp or create a custom ramp by right clicking on the color ramp. If you want to classify your data using specific breaks, click the `Classify` button to choose your selected method of breaks. You can also format labels to remove decimal points or change the significant figures of the displayed data. Select `Apply` and then `OK` and your shapefile will be symbolized using your specified parameters.
+Right click on the newly added layer and select `Properties`. Under the tab named `Symbology`, select the “Quantities” on the left sidebar and choose `Graduated colors`. Choose the variable for the field `Total_Rent`. You can choose a color ramp or create a custom ramp by right clicking on the color ramp. If you want to classify your data using specific breaks, click the `Classify` button to choose your selected method of breaks. You can also format labels to remove decimal points or change the significant figures of the displayed data. Select `Apply` and then `OK` and your shapefile will be symbolized using your specified parameters.
 
 ![t11-25_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-25_new.png)
 
@@ -165,6 +165,6 @@ Adjust colors and add legends, scale bars, and other graphics to complete your m
 
 ## Tutorial Deliverable
 
-Repeat these steps, but choose a *different* Census variable (other than Gross Rent) to visualize. You can choose to select a specific borough or visualize the Census data by tract for all 5 boroughs. 
+Export this image and submit! 
 
 Source: American FactFinder, United States Census Bureau. U.S. Department of Commerce, 2000 http://factfinder.census.gov/
