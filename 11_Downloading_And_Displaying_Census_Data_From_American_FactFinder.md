@@ -155,13 +155,13 @@ To graphically analyze the dataset you created and joined we can symbolize the d
 
 ![t11-24_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-24_new.png)
 
-Right click on the newly added layer and select `Properties`. Under the tab named `Symbology`, select the “Quantities” on the left sidebar and choose `Graduated colors`. Choose the variable for the field `Total_Rent`. You can choose a color ramp or create a custom ramp by right clicking on the color ramp. If you want to classify your data using specific breaks, click the `Classify` button to choose your selected method of breaks. You can also format labels to remove decimal points or change the significant figures of the displayed data. Select `Apply` and then `OK` and your shapefile will be symbolized using your specified parameters.
+Right click on the newly added layer and select `Properties`. Under the tab named `Symbology`, select the “Quantities” on the left sidebar and choose `Graduated colors`. Choose the variable for the field `Total_Rent`. You can choose a color ramp or create a custom ramp by right clicking on the color ramp. If you want to classify your data using specific breaks, click the `Classify` button to choose your selected method of breaks (hint, if you want to break at every $500, you should select 6 breaks and manual for classification method. You'll have to format the legend to display in currency). You can also format labels to remove decimal points or change the significant figures of the displayed data. Select `Apply` and then `OK` and your shapefile will be symbolized using your specified parameters.
 
 ![t11-25_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-25_new.png)
 
-Adjust colors and add legends, scale bars, and other graphics to complete your map.
+Adjust colors and add legend, scale bar, and other text to complete your map. 
 
-![t11-26.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_11/t11-26.png)
+![t11-26.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-26_new.png)
 
 ## Tutorial Deliverable
 
