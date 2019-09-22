@@ -161,7 +161,7 @@ Right click on the newly added layer and select `Properties`. Under the tab name
 
 Adjust colors and add legend, scale bar, and other text to complete your map. 
 
-![t11-26.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-26_new.png)
+![t11-26.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-26_new.jpg)
 
 ## Tutorial Deliverable
 
