@@ -90,8 +90,6 @@ Once the file is open, ensure the following:
   * Start data values in row 2.
   * Ensure there are no special characters (periods, commas, ampersands, hyphens, etc.) in the headings (e.g. rename `GEO.id2` to `GEO_id2`).
   * Delete any extra columns of data that you do not need in your dataset.
- 
-![t11-16_1_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-16_1_new.png)
 
 Once the modifications to the table are made, save the file in an Excel Workbook `.xls` format (Excel 97-2003 Workbook). Close the Excel file after saving.
 
