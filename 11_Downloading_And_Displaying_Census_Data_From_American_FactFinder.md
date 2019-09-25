@@ -72,20 +72,6 @@ On the next page choose the geography of your interest. From the `Select a State
 
 *Note: If you download these files in Google Chrome or some web browsers, you may need to disable security preferences indicated by a security shield to the right of the address bar.*
 
-TIGER shapefiles can also be downloaded directly from the American Factfinder without having to navigate to a new webpage. In the preview page of your selected data, choose `Create Map`.Click `Create Map`. Click on any piece of hyperlinked data in the table to create the map, in this case the first entry for the `Gross Rent Estimate` column. 
-
-![t11-15_1.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-15_1.png)
-
-Once the map is created you can preview the map and legend. To download the associated TIGER shapefile, click “Download” from the “Actions” panel.
-
-![t11-9_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-9_new.png)
-
-In the `Download` dialog box, select the option for “Shapefiles (.zip)” at the bottom of the window under `Spatial Data formats.` Click `OK` and `Download` in the next window. You may have to turn off pop-up blockers to download the data. If the file does not contain projection data, it is recommended to download the TIGER shapefiles directly from the TIGER website.
-
-![t11-10_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-10_new.png)
-
-*Note: If you download these files in Google Chrome or some web browsers, you may need to disable security preferences indicated by a security shield to the right of the address bar.*
-
 ## Preparing FactFinder Data for Importing and Joining into ArcMap
 
 Unzip the .zip file of the dataset you downloaded for Gross Rent. Open the `.csv` file in Microsoft Excel.
@@ -107,17 +93,13 @@ Once the file is open, ensure the following:
  
 ![t11-16_1_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-16_1_new.png)
 
-*Note: If you downloaded your TIGER data from the TIGER website, you will have to change the column in your Excel file including your `GEO_id2` field to a `Text` type. This will make it possible to join in ArcMap. If you downloaded the TIGER data from the `Create Map` feature on the FactFinder website, you can leave this column as a `General` or `Number` type.*
-
-![t11-16_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-16_new.png)
-
 Once the modifications to the table are made, save the file in an Excel Workbook `.xls` format (Excel 97-2003 Workbook). Close the Excel file after saving.
 
 ## Joining Excel Table to TIGER Shapefile in ArcMap
 
 Open ArcMap and new blank map. Add the TIGER Census Tracts shapefile you unzipped to the map. You may have to `connect to folder` to locate the file. The shapefile will now be displayed on the map. Next add the Excel table to the map using the same technique. Please be aware that it will not correctly load unless you have closed the file in Excel first.
 
-Right click on TIGER layer and select `Open Attribute Table`. When joining a shapefile to tabular data, we must have a unique ID column in both attribute tables to join on. Note that in the attribute table for the TIGER file, the field name `GEOID` matches the second ID field (`GEO_id2`) in the Excel table you formatted (you can check the attribute table of the excel file by right clicking on the table in the table of contents window and selecting `Open`. To check that they are stored as the same type of data, right click on column header `GEOID` in the attribute table and click `Properties`. Repeat this step for the `GEO_id2` column in the Excel table. Those two fields should match `Type` as a `String` type. We will use these fields to join the data.
+Right click on TIGER layer and select `Open Attribute Table`. When joining a shapefile to tabular data, we must have a unique ID column in both attribute tables to join on. Note that in the attribute table for the TIGER file, the field name `GEOID` matches the second ID field (`GEO_id2`) in the Excel table you formatted (you can check the attribute table of the excel file by right clicking on the table in the table of contents window and selecting `Open`. To check that they are stored as the same type of data, right click on column header `GEOID` in the attribute table and click `Properties`. Repeat this step for the `GEO_id2` column in the Excel table. Those two fields should match `Type` as a `Double` type. We will use these fields to join the data.
 
 ![t11-17_new.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/Tutorial_11/t11-17_new.png)
 
