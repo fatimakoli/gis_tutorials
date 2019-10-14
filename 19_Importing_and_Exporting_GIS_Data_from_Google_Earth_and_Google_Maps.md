@@ -54,10 +54,6 @@ To add placemarks, click the `Add Placemark` button. Drag your placemark to the 
 
 ![t19-8.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_19/t19-8.png)
 
-Continue to add Placemarks. You can group your placemark in a layer by going to `Add` in the menu bar and navigating to `Layer`. Then drag your Placemarks into the Layer.
-
-![t19-9.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_19/t19-9.png)
-
 You can also add lines and polygons by tracing features on the map. Click on the `Add Polygons` button. You will be asked to name your polygon. Before closing the dialog box, begin tracing your features.
 
 ![t19-10.png](https://github.com/jai2125/gis_tutorials/blob/master/Images/Tutorial_19/t19-10.png)
