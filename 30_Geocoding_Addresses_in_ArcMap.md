@@ -3,7 +3,7 @@
 *This tutorial will guide you through the process of geocoding address data in ArcMap 10.6.1. In this tutorial we use the following data (right click on each link and select "open link in a new tab" to download the files and save to your working directory. Make sure to unzip any zipped folders/files):*
 
 * [Day Care Centers](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/DAYCARECENTERS_NYC_CLEAN.xlsx)
-* [NYC_TRACTS_2010](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/NYC_TRACTS_2010.zip). 
+* [NYC_TRACTS_2010](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/2010Tracts-20191025T194412Z-001.zip). 
       **NOTE**: You will have to rename the layer as NYC_TRACTS_2010 in the Catalog window once you open ArcMap.
 * [UnderFiveByTract](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/UnderFivePopulation.xls). **NOTE**: You may have to save this file as a CSV after downloading it.
 
@@ -43,7 +43,7 @@ Click `OK`. 93\% of addresses should match (1793 addresses total). About 3\% sho
 
 Add the TRACTS layer to your dataframe (rename it if you haven't already done so) and then add the Geocoding Results shapefile to your data frame. Add the UnderFivePopulation.csv file to the table of contents window. We will visualize some Census data and compare the locations of daycare centers.
 
-1. Join the UnderFivePopulation.csv file to the TRACTS shapefile (NOTE: you will have to convert the `GEO_ID2` field in the TRACTS attribute table to a Long... which involves adding a new field as a long and calculating the new field as `GEO_ID2` as a number). You can join the new field to the Geo_ID2 field in the UnderFivePopulation.csv table).
+1. Join the UnderFivePopulation.csv file (using the `Geo_ID2` field) to the TRACTS shapefile (using the `GEO_ID` field).
 
 2. Go to `Properties` of the TRACT layer, then in the Symbology tab select Quantities. For Value, click the dropdown menu and select `TotUnderFive`. This variable represents the total number of children under 5 years old. Normalize this variable by `TotPop2017`, a variable representing the total population. Format the labels so they display percents of the total rather than the fraction (with no decimal points). Select `Apply` and `OK`. 
 
