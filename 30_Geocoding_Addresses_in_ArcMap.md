@@ -3,9 +3,9 @@
 *This tutorial will guide you through the process of geocoding address data in ArcMap 10.6.1. In this tutorial we use the following data (right click on each link and select "open link in a new tab" to download the files and save to your working directory. Make sure to unzip any zipped folders/files):*
 
 * [Day Care Centers](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/DAYCARECENTERS_NYC_CLEAN.xlsx)
-* [NYC_TRACTS_2010](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/2010%20Census%20Tracts.zip). 
+* [NYC_TRACTS_2010](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/NYC_TRACTS_2010.zip). 
       **NOTE**: You will have to rename the layer as NYC_TRACTS_2010 in the Catalog window once you open ArcMap.
-* [UnderFiveByTract](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/UnderFiveByTract.xlsx). **NOTE**: You will have to save this file as a CSV after downloading it.
+* [UnderFiveByTract](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/UnderFivePopulation.xls). **NOTE**: You may have to save this file as a CSV after downloading it.
 
 First, we will work with the Day Care Centers dataset. The data have been cleaned (e.g. the column headers have been adjusted to remove spaces and redundant columns have been removed). However, there is still some work to do in Excel before the data can be geocoded in ArcMap. This is often the case with datasets that contain address data and no other location information. Addresses are often contained within one column and delimited with a variety of separators (e.g. comma, tab, space, etc.).  
 
@@ -19,7 +19,7 @@ First, we will work with the Day Care Centers dataset. The data have been cleane
 
 ![t30-2.png](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/Images/t30-2.png)
 
-5. Save the file as a CSV with the ADDRESS column and close Excel.
+5. Save the file as a CSV with the ADDRESS column and close Excel (although the .xls file might work fine - you can try it first if you'd like!).
 
 Open a blank map in ArcMap. In the Catalog window, expand the folder for GIS servers and click `Add ArcGIS Server`.
 
@@ -41,17 +41,17 @@ Navigate to the DAYCARECENTERS_NYC_CLEAN.csv file in the Catalog window. Right c
 
 Click `OK`. 93\% of addresses should match (1793 addresses total). About 3\% should tie or remain unmatched. That's fine for the purposes of this lab. In the Chapter 8 tutorial, you will learn how to rematch or fix addresses that don't match. Close the Geocode Addresses window. The results are saved as a shapefile called `Geocoding Results` in the same folder (you should see this shapefile in your Catalog window within your working directory, e.g. the folder you are working in). 
 
-Add the TRACTS layer to your dataframe (rename it if you haven't already done so) and then add the Geocoding Results shapefile to your data frame. Add the UnderFiveByTract.csv file to the table of contents window. We will visualize some Census data and compare the locations of daycare centers.
+Add the TRACTS layer to your dataframe (rename it if you haven't already done so) and then add the Geocoding Results shapefile to your data frame. Add the UnderFivePopulation.csv file to the table of contents window. We will visualize some Census data and compare the locations of daycare centers.
 
-1. Join the UnderFiveByTract.csv file to the TRACTS shapefile (NOTE: you will have to convert the `ct2010` field in the TRACTS attribute table to a Long... which involves adding a new field as a long and calculating the new field as `ct2010` as a number). You can join the new field to the Geo_TRACT field in the UnderFiveByTract.csv table).
+1. Join the UnderFivePopulation.csv file to the TRACTS shapefile (NOTE: you will have to convert the `GEO_ID2` field in the TRACTS attribute table to a Long... which involves adding a new field as a long and calculating the new field as `GEO_ID2` as a number). You can join the new field to the Geo_ID2 field in the UnderFivePopulation.csv table).
 
-2. Go to `Properties` of the TRACT layer, then in the Symbology tab select Quantities. For Value, click the dropdown menu and select SE_A01001_002. This variable represents the total number of children under 6 years old. Normalize this variable by SE_A01001_001, a variable representing the total population. Format the labels so they display percents of the total rather than the fraction (with no decimal points). Select `Apply` and `OK`. 
+2. Go to `Properties` of the TRACT layer, then in the Symbology tab select Quantities. For Value, click the dropdown menu and select `TotUnderFive`. This variable represents the total number of children under 5 years old. Normalize this variable by `TotPop2017`, a variable representing the total population. Format the labels so they display percents of the total rather than the fraction (with no decimal points). Select `Apply` and `OK`. 
 
 Lab Deliverables:
 
 1. Zoom into a borough or a large area of two boroughs. Format the map as an image (title, legend, scale, north arrow, etc). Export and paste into a word doc. 
 Include your responses to the following questions:
-2. Does there seem to be a pattern regarding the locations of Day Care Centers accross the borough(s)? (hint: you can select by attributes and display only tracts where there are more than 494 children under 5 (i.e. above 10% of the total population). You can right click on the selected layer, go to `Selections` and select `Create layer from Selected Features`.).
+2. Does there seem to be a pattern regarding the locations of Day Care Centers accross the borough(s)? (hint: you can select by attributes and display only tracts where there are more than 10% children under 5 by using the field `UFiveP` which is the percent of children under 5. You can right click on the selected layer, go to `Selections` and select `Create layer from Selected Features`.).
 
 
 
