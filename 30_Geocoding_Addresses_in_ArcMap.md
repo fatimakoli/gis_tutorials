@@ -26,9 +26,19 @@ Make sure you have the Geocoding toolbar in your toolbars area or click `Customi
 
 ![t30-4.png]()
 
-In the `Address Locator Manager` dialog box, select `Add`. Navigate (from the `Look in:` dropdown menu) to GIS Servers -> arcgis on gisservices.its.ny.gov (user) -> the Locaters folder. Select `Street and Address Composite`. Click `Add` then close the `Address Locator Manager` window.
+In the `Address Locator Manager` dialog box, select `Add`. Navigate (from the `Look in:` dropdown menu) to GIS Servers -> arcgis on gisservices.its.ny.gov (user) -> the Locators folder. Select `Street and Address Composite`. Click `Add` then close the `Address Locator Manager` window.
 
 ![t30-5.png]()
 
-Navigate to the DAYCARECENTERS_NYC_CLEAN.csv file in the Catalog window. Right click on the file and select `Geocode Addresses`.
+Navigate to the DAYCARECENTERS_NYC_CLEAN.csv file in the Catalog window. Right click on the file and select `Geocode Addresses`. In the `Select Address Locator` window, make sure the composite locator that you just added is selected. Click `OK`. In the next window of the Geocode Addresses process, select `ADDRESS` for Street or Intersection and make sure `CITY` is selected for city and `ZIP` is selected for ZIP code.
+
+![t30-6.png]()
+
+Click `OK`. 93\% of addresses should match (1793 addresses total). About 3\% should tie or remain unmatched. That's fine for the purposes of this lab. In the Chapter 8 tutorial, you will learn how to rematch or fix addresses that don't match. Close the Geocode Addresses window. The results are saved as a shapefile called `Geocoding Results` in the same folder (you should see this shapefile in your Catalog window within your working directory, e.g. the folder you are working in). Add the NYC_TRACTS_2010 shapefile to your dataframe and then add the Geocoding Results shapefile to your data frame. Add the UnderFiveByTract.csv file to the table of contents window. We will visualize some Census data and compare the locations of daycare centers.
+
+1. Join the UnderFiveByTract.csv file to the TRACTS shapefile (NOTE: you will have to convert the `ct2010` field in the TRACTS attribute table to a Long... which involves adding a new field as a long and calculating the new field as `ct2010` as a number). You can join the new field to the Geo_TRACT field in the UnderFiveByTract.csv table).
+
+
+
+
 
