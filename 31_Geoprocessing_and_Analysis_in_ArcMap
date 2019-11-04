@@ -7,7 +7,8 @@ public transportation (subway stations).
 
 ## Questions
 
-What percent of daycare centers are located within areas with a high number of children under five?
+What percent of daycare centers are located within areas with a high number of children under five (over 10% of population in a tract is
+children under five)?
 How many daycare centers are located farther than 1/4 mile away from a subway station? Where are those centers (borough, neighborhood)?
 How many children do those "far" daycare centers serve?
 
@@ -44,5 +45,28 @@ Arrange the layers so that subway stations and daycares are the top two layers.
 * We will determine which daycare centers lie within these census tracts by using the select by location tool. Navigate to menu item `Selection` >
 `Select by location...`. Set the target layer to `DaycareCenters` and the source layer to `NYC_tracts_kids`. Set the selection methods
 for target layer features to `are within the source layer feature` and click `OK`.
+
+* Open the attribute table of DaycareCenters to see how many day care centers were selected. What percent of the total number of daycare centers
+fall within these tracts (divide the selected number by the total and multiply that number by 100)?
+
+**Save** your map project.
+
+Now we will turn to the questions regarding the relationship between subway stations and daycare centers in NYC. First, we will address the
+following question: How many daycare centers are located farther than 1/4 mile away from a subway station? Where are those centers (borough, neighborhood)?
+
+To answer this question, we will create a 1/4 mile buffer around daycare centers. We will be saving a number of new layers so make
+sure to save everything in the same folder in your working directory.
+
+## Creating buffers
+
+* Navigate to menu item `Selection` > `Clear Selected Features` to deselect the daycare centers.
+* Navigate to menu item `Geoprocessing` > `Buffer`.
+* Set Input Features to `SubwayStations` - this sets which layer the buffers will draw around.
+* Set the Output Feature Class to `Subways_QuarterMiBuffer.shp` within your working directory.
+* Set the buffer distance to 0.25 and set the unit to miles.
+* Click `OK`. 
+
+
+
 
 
