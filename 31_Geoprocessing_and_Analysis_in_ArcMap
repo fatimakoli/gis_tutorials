@@ -98,7 +98,71 @@ Remove the selections copy of `Daycares_QuarterMiBuffer_SubwaysJoin` and clear s
 
 How many children under 5 are served by these daycare centers (i.e. how many children under 5 live near these daycare centers)?
 
-First we will figure out how many children under 5 live in the census tracts that intersect one of our 1/4 buffers around daycares that are 
-more than 1/4 mile away from a subway station.
+We will estimate the population of children under 5 that lives precisely within our ¼ mile buffers using
+a method called proportional split estimation. A proportional split is a way to estimate the proportion of a 
+quantitative attribute that falls within a portion of a polygon’s area. A proportional split is calculated in a few fairly simple steps.
 
-* Use the select by location tool (target layer is TRACTS, source layer is 
+We calculate the area of each polygon unit:
+* Clip the polygons to the boundary of the study area (in our case the ¼ mile buffers)
+* Calculate the area of the polygons after clipping them to the study area
+* Divide the area of the polygons within the study area by their original area to determine the proportion of the original area that falls within the study area
+* Multiply the attributes (for us, population of children under 5) we wish to estimate by the proportion in order to estimate the proportion of the attribute that falls within the study area. 
+Note: that proportional split estimation assumes that the attribute you are estimating is evenly distributed through out the polygon. 
+In reality the population within each census tract is not evenly distributed nevertheless thus this is an estimate.
+
+## Calculating the area of the census tracts
+
+* Open the attribute table for the TRACTS layer and click the “Table Options” icon and choose Add Field. Name the field Area, of type Double.
+Click OK.
+* Right-Click on the Area field and choose Calculate Geometry. Ignore warnings. Set the Property to Area and click OK.
+
+## Clipping the census tracts to the ¼ mile `Daycares_QuarterMiBuffer_SubwaysJoin` buffers
+
+* Next we will use the clip tool to clip the tracts with the ¼ mile buffers around the Daycare centers that are not near a subway station
+* Navigate to `Geoprocessing` > `Clip`.
+* Set the Input Features to TRACTS.
+* Set the Clip Features to Daycares_QuarterMiBuffer_SubwaysJoin.
+* Save the Output Feature Class as Tracts_Daycares_NoSubways_Clip.shp. Click OK.
+
+A new layer containing the census tracts clipped to the ¼ mile buffers around the daycares was added to your map.
+Toggle the visibility of all of the layers on your map off except for Tracts_Daycares_NoSubways_Clip.
+
+## Calculating the area of the clipped census tracts
+
+* Now we will calculate the area of these new polygons.
+* Open the attribute table for the clipped census tracts layer: `Tracts_Daycares_NoSubways_Clip`
+* Create a new field again to calculate the new area of each polygon.
+* Name the field `AreaClip`, of type Double. Click `OK`.
+* Notice the new field that has been added to the far right of the attribute table called `AreaClip`. 
+Right-Click on `AreaClip` and choose `Calculate Geometry`. Set the Property to `Area` and click `OK`.
+
+## Dividing the area of the clipped census tracts by their original area
+
+* With attribute table still open, add a new field.
+* Name the field `Proportion`, of type Double.
+* Right-Click on the new field `Proportion` and choose `Field Calculator....` Ignore warnings.
+* Double-click `AreaClip`, Click `/` sign, and double-click `TRACTS_Area`. Your calculation should look like this: `[AreaClip]/[Area]` -- i.e. the proportion of the original area that remained after the clip.
+Click OK
+
+## Multiplying the population by the proportion
+
+* Now we will calculate one final field where we’ll multiply the attributes in order to estimate the proportion of the attribute that falls within the study area.
+* Add new field and name it `UnderFive_cl` of type Double.
+* Right-Click on the new field `UnderFive_cl` and choose `Field Calculator....` Ignore warnings.
+* Double-click `Proportion`, click `*` sign, and double-click `TotUnderFive`. Your calculation should look like this: `[Proportion] * [TotUnderFive]`.
+
+Click OK
+Close the attribute table.
+Now we will compare the total estimated population within the buffers to the original rough population estimate we made at the beginning of this exercise using the summary statistics tool
+
+Navigate to Geoprocessing > ArcToolbox > Analysis Tools > Statistics > Summary Statistics. 
+Set the Input Table to `Tracts_Daycares_NoSubways_Clip`. Save the Output Table to `Tracts_cl_Stats`. 
+Set the Statistics Field to TotUnderFive_cl and Statistics Type to SUM. Click OK.
+
+Open the new table to get the estimated total number of children under 5 in the clipped areas (i.e. the areas where there are
+daycare centers that are all more than 1/4 mile away from a subway station).
+
+
+
+
+8
