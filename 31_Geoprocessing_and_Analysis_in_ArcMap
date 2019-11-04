@@ -1,0 +1,31 @@
+
+## Premise
+
+We are interested at looking at access to daycare centers accross NYC. First, we want to evaluate if daycare centers are located in areas that have high numbers of children under 5 years old. Then we will evaluate which daycare centers are farthest from public transportation (subway stations).
+
+## Questions
+
+How many daycare centers are located within areas with a high number of children under five?
+How many daycare centers are located farther than 1/4 mile away from a subway station? Where are those centers (borough, neighborhood)?
+How many children do those "far" daycare centers serve?
+
+## Before beginning
+
+Download the data (same as previous week's lab, except Day Care Centers is a geocoded shapefile of the daycare centers as points):
+
+* [Day Care Centers](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/DAYCARECENTERS_NYC_CLEAN.xlsx)
+* [NYC_TRACTS_2010](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/2010Tracts-20191025T194412Z-001.zip). 
+      **NOTE**: You will have to rename the layer as NYC_TRACTS_2010 in the Catalog window once you open ArcMap.
+* [UnderFiveByTract](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/UnderFivePopulation.xls). **NOTE**: You may have to save this file as a CSV after downloading it.
+* [Subway Stations] ()
+
+Add the three shapefiles and the csv to the data frame/table of contents.
+
+Join the `UnderFiveByTract` csv to the `NYC_TRACTS_2010` shapefile.
+
+**Note:** Save your map project (as a .mxd) periodically.
+
+
+
+
+
