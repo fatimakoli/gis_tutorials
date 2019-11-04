@@ -1,10 +1,10 @@
 
-## Premise
+# Premise
 
 We are interested at looking at access to daycare centers accross NYC. First, we will determine the percent of daycare centers in NYC that are in areas with high concentrations of children under 5. Then, we will evaluate which daycare centers are farthest from 
 public transportation (subway stations). Finally, we want to find out how many children under 5 are served by daycare centers that are "far" away from subway stations.
 
-## Deliverable
+# Deliverable
 
 A map showing a buffer around daycares that are 1/4 miles or more away from a subway station.
 
@@ -14,7 +14,7 @@ What percent of daycare centers are located in areas (i.e. tracts) with high con
 What percent of daycare centers in NYC are located farther than 1/4 mile away from a subway station? 
 How many children under 5, total, do those "far" daycare centers serve?
 
-## Before beginning
+# Before beginning
 
 Download the data (same as previous week's lab except Day Care Centers is a shapefile of the daycare centers as points, and adding subway stations layer):
 
@@ -53,7 +53,7 @@ Now we will turn to the questions regarding the relationship between subway stat
 To answer this question, we will create a 1/4 mile buffer around daycare centers. We will be saving a number of new layers so make
 sure to save everything in the same folder in your working directory.
 
-## Creating buffers
+# Creating buffers
 
 * Navigate to menu item `Selection` > `Clear Selected Features` to deselect the daycare centers.
 * Navigate to menu item `Geoprocessing` > `Buffer`.
@@ -69,7 +69,7 @@ Next we will use the select by location tool to determine which daycare centers 
 * Open the attribute table of DaycareCenters. The selections show how many daycare centers are WITHIN a 1/4 mile of a subway station.
 In order to determine how many fall outside the 1/4 distance, subtract the number of selections from the total number of daycare centers. Convert that number into a percent to answer Question #2.
 
-## Spatial Join and Making Estimates
+# Spatial Join and Making Estimates
 
 In order to answer our final question regarding the percent of children under five served by daycare centers "far" away from subway stations, we will need to perform a spatial join.
 
@@ -100,12 +100,12 @@ We calculate the area of each polygon unit:
 Note: that proportional split estimation assumes that the attribute you are estimating is evenly distributed through out the polygon. 
 In reality the population within each census tract is not evenly distributed nevertheless thus this is an estimate.
 
-## Calculating the area of the census tracts
+# Calculating the area of the census tracts
 
 * Open the attribute table for the TRACTS layer and click the “Table Options” icon and choose Add Field. Name the field Area, of type Double. Click OK.
 * Right-Click on the Area field and choose Calculate Geometry. Ignore warnings. Set the Property to Area and click OK.
 
-## Clipping the census tracts to the ¼ mile `Daycares_QuarterMiBuffer_SubwaysJoin` buffers
+# Clipping the census tracts to the ¼ mile `Daycares_QuarterMiBuffer_SubwaysJoin` buffers
 
 * Next we will use the clip tool to clip the tracts with the ¼ mile buffers around the Daycare centers that are not near a subway station
 * Navigate to `Geoprocessing` > `Clip`.
@@ -116,7 +116,7 @@ In reality the population within each census tract is not evenly distributed nev
 A new layer containing the census tracts clipped to the ¼ mile buffers around the daycares was added to your map.
 Toggle the visibility of all of the layers on your map off except for Tracts_Daycares_NoSubways_Clip.
 
-## Calculating the area of the clipped census tracts
+# Calculating the area of the clipped census tracts
 
 * Now we will calculate the area of these new polygons.
 * Open the attribute table for the clipped census tracts layer: `Tracts_Daycares_NoSubways_Clip`
@@ -125,7 +125,7 @@ Toggle the visibility of all of the layers on your map off except for Tracts_Day
 * Notice the new field that has been added to the far right of the attribute table called `AreaClip`. 
 Right-Click on `AreaClip` and choose `Calculate Geometry`. Set the Property to `Area` and click `OK`.
 
-## Dividing the area of the clipped census tracts by their original area
+# Dividing the area of the clipped census tracts by their original area
 
 * With attribute table still open, add a new field.
 * Name the field `Proportion`, of type Double.
@@ -133,7 +133,7 @@ Right-Click on `AreaClip` and choose `Calculate Geometry`. Set the Property to `
 * Double-click `AreaClip`, Click `/` sign, and double-click `TRACTS_Area`. Your calculation should look like this: `[AreaClip]/[Area]` -- i.e. the proportion of the original area that remained after the clip.
 Click OK
 
-## Multiplying the population by the proportion
+# Multiplying the population by the proportion
 
 * Now we will calculate one final field where we’ll multiply the attributes in order to estimate the proportion of the attribute that falls within the study area.
 * Add new field and name it `UnderFive_cl` of type Double.
