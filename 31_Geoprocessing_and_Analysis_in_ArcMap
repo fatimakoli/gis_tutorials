@@ -1,10 +1,8 @@
 
 ## Premise
 
-We are interested at looking at access to daycare centers accross NYC. First, we will determine the percent of daycare centers in NYC that are
-in areas with high concentrations of children under 5. Then, we will evaluate which daycare centers are farthest from 
-public transportation (subway stations). Finally, we want to find out how many children under 5 are served by daycare centers that are "far" 
-away from subway stations.
+We are interested at looking at access to daycare centers accross NYC. First, we will determine the percent of daycare centers in NYC that are in areas with high concentrations of children under 5. Then, we will evaluate which daycare centers are farthest from 
+public transportation (subway stations). Finally, we want to find out how many children under 5 are served by daycare centers that are "far" away from subway stations.
 
 ## Deliverable
 
@@ -39,26 +37,18 @@ Add the three shapefiles and the csv to the data frame/table of contents.
 How many daycares (or what percent of the total number of daycares) are located within census tracts where more than 15.5% of the population
 are children under five years old?
 
-* Navigate to menu `Selection` > `Select by Attributes`. Make sure the `TRACTS` layer is the active selection and the selection method is set to 
-`Create a New Selection`. **Double-click** `UFiveP`, click `>`, and type `15.5`. Your expression should look like this:
+* Navigate to menu `Selection` > `Select by Attributes`. Make sure the `TRACTS` layer is the active selection and the selection method is set to `Create a New Selection`. **Double-click** `UFiveP`, click `>`, and type `15.5`. Your expression should look like this:
 `"UFiveP" > 15.5`. Click `OK`. In the bottom left-hand corner of the ArcMap window, you should see how many features were selected.
 
-* Right-click on the TRACTS layer and choose `Selection` > `Create Layer from Selected Features`. A new layer will appear on top. Save (`Export`)
-that new layer to your working directory as a shapefile called `NYC_tracts_kids`. Clear selection by navigating to menu item `Selection` > `Clear selected feautres`. 
-Remove the duplicate TRACTS selection layer. Resymbolize the NYC_tracts_kids layer so that you can see it clearly over the original TRACTS layer.
-Arrange the layers so that subway stations and daycares are the top two layers.
+* Right-click on the TRACTS layer and choose `Selection` > `Create Layer from Selected Features`. A new layer will appear on top. Save (`Export`) that new layer to your working directory as a shapefile called `NYC_tracts_kids`. Clear selection by navigating to menu item `Selection` > `Clear selected feautres`. Remove the duplicate TRACTS selection layer. Resymbolize the NYC_tracts_kids layer so that you can see it clearly over the original TRACTS layer. Arrange the layers so that subway stations and daycares are the top two layers.
 
-* We will determine which daycare centers lie within these census tracts by using the select by location tool. Navigate to menu item `Selection` >
-`Select by location...`. Set the target layer to `DaycareCenters` and the source layer to `NYC_tracts_kids`. Set the selection methods
-for target layer features to `are within the source layer feature` and click `OK`.
+* We will determine which daycare centers lie within these census tracts by using the select by location tool. Navigate to menu item `Selection` > `Select by location...`. Set the target layer to `DaycareCenters` and the source layer to `NYC_tracts_kids`. Set the selection methods for target layer features to `are within the source layer feature` and click `OK`.
 
-* Open the attribute table of DaycareCenters to see how many day care centers were selected. What percent of the total number of daycare centers
-fall within these tracts (divide the selected number by the total and multiply that number by 100)?
+* Open the attribute table of DaycareCenters to see how many day care centers were selected. What percent of the total number of daycare centers fall within these tracts (divide the selected number by the total and multiply that number by 100)?
 
 **Save** your map project.
 
-Now we will turn to the questions regarding the relationship between subway stations and daycare centers in NYC. First, we will address the
-following question: How many daycare centers are located farther than 1/4 mile away from a subway station? Where are those centers (borough, neighborhood)?
+Now we will turn to the questions regarding the relationship between subway stations and daycare centers in NYC. First, we will address the following question: How many daycare centers are located farther than 1/4 mile away from a subway station? Where are those centers (borough, neighborhood)?
 
 To answer this question, we will create a 1/4 mile buffer around daycare centers. We will be saving a number of new layers so make
 sure to save everything in the same folder in your working directory.
@@ -77,30 +67,24 @@ Next we will use the select by location tool to determine which daycare centers 
 * Set Target Layer to DaycareCenters and Source Layer to Subways_QuarterMiBuffer. Keep the selection method for target layer features to interect the source layer feature.
 * Click `OK`.
 * Open the attribute table of DaycareCenters. The selections show how many daycare centers are WITHIN a 1/4 mile of a subway station.
-In order to determine how many fall outside the 1/4 distance, subtract the number of selections from the total number of daycare centers.
-Convert that number into a percent to answer Question #2.
+In order to determine how many fall outside the 1/4 distance, subtract the number of selections from the total number of daycare centers. Convert that number into a percent to answer Question #2.
 
 ## Spatial Join and Making Estimates
 
-In order to answer our final question regarding the percent of children under five served by daycare centers "far" away from subway stations,
-we will need to perform a spatial join.
+In order to answer our final question regarding the percent of children under five served by daycare centers "far" away from subway stations, we will need to perform a spatial join.
 
 * Deselect the daycare centers by navigating to `Selection` > `Clear Selected Features`. Right-click on `Subways_QuarterMiBuffer` and choose Joins and Relates > Join....
 * Uncheck the box next to the Subways_QuarterMiBuffer layer so that it is not visible on the map.
-* Create a quarter mile buffer around the daycare centers (`Geoprocessing` > `Buffer', input features are daycare centers, save the output 
-feature class as Daycares_QuarterMiBuffer, set the distance to 0.25 Miles and click `OK`).
+* Create a quarter mile buffer around the daycare centers (`Geoprocessing` > `Buffer', input features are daycare centers, save the output feature class as Daycares_QuarterMiBuffer, set the distance to 0.25 Miles and click `OK`).
 * Right-click on the Daycares_QuarterMiBuffer layer and select `Joins and Relates` > `Join...`
 * Choose `Join data from another layer based on a spatial location` from the drop-down menu.
 * Choose SubwayStations as the layer to join to this layer.
-* Since we just want to know which daycare centers are farther than 1/4 mile from a subway station, we don't necessarily need to compute a summary
+* Since we just want to know which daycare centers are farther than 1/4 mile from a subway station, we don't necessarily need to compute 
 a summary, so don't check any of those boxes.
 * Save the output shapefile in your working directory as `Daycares_QuarterMiBuffer_SubwaysJoin`
 * Click `OK`.
 
-Right-click on the new layer, `Daycares_QuarterMiBuffer_SubwaysJoin`, and open the attribute table. The `count` field tells us how many subway
-stations are within the 1/4 buffer of each daycare center. Select the features in this layer that have a 0 as their record in the `count` field.
-Add the selected features to the map as a new layer. Save/export that layer as a shapefile called `Daycares_NoSubways` and add it to the map. 
-Remove the selections copy of `Daycares_QuarterMiBuffer_SubwaysJoin` and clear selections.
+Right-click on the new layer, `Daycares_QuarterMiBuffer_SubwaysJoin`, and open the attribute table. The `count` field tells us how many subway stations are within the 1/4 buffer of each daycare center. Select the features in this layer that have a 0 as their record in the `count` field. Add the selected features to the map as a new layer. Save/export that layer as a shapefile called `Daycares_NoSubways` and add it to the map. Remove the selections copy of `Daycares_QuarterMiBuffer_SubwaysJoin` and clear selections.
 
 How many children under 5 are served by these daycare centers (i.e. how many children under 5 live near these daycare centers)?
 
@@ -118,8 +102,7 @@ In reality the population within each census tract is not evenly distributed nev
 
 ## Calculating the area of the census tracts
 
-* Open the attribute table for the TRACTS layer and click the “Table Options” icon and choose Add Field. Name the field Area, of type Double.
-Click OK.
+* Open the attribute table for the TRACTS layer and click the “Table Options” icon and choose Add Field. Name the field Area, of type Double. Click OK.
 * Right-Click on the Area field and choose Calculate Geometry. Ignore warnings. Set the Property to Area and click OK.
 
 ## Clipping the census tracts to the ¼ mile `Daycares_QuarterMiBuffer_SubwaysJoin` buffers
@@ -167,8 +150,3 @@ Set the Statistics Field to TotUnderFive_cl and Statistics Type to SUM. Click OK
 
 Open the new table to get the estimated total number of children under 5 in the clipped areas (i.e. the areas where there are
 daycare centers that are all more than 1/4 mile away from a subway station).
-
-
-
-
-8
