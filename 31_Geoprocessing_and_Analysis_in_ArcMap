@@ -9,7 +9,7 @@ public transportation (subway stations).
 
 What percent of daycare centers are located within areas with a high number of children under five (over 10% of population in a tract is
 children under five)?
-How many daycare centers are located farther than 1/4 mile away from a subway station? Where are those centers (borough, neighborhood)?
+What percent of daycare centers are located farther than 1/4 mile away from a subway station? Where are those centers (borough, neighborhood)?
 How many children do those "far" daycare centers serve?
 
 ## Before beginning
@@ -66,7 +66,39 @@ sure to save everything in the same folder in your working directory.
 * Set the buffer distance to 0.25 and set the unit to miles.
 * Click `OK`. 
 
+Next we will use the select by location tool to determine which daycare centers fall within ¼ mile of a subway station. Navigate to menu item `Selection` > `Select by location...`.
 
+* Set Target Layer to DaycareCenters and Source Layer to Subways_QuarterMiBuffer. Keep the selection method for target layer features to interect the source layer feature.
+* Click `OK`.
+* Open the attribute table of DaycareCenters. The selections show how many daycare centers are WITHIN a 1/4 mile of a subway station.
+In order to determine how many fall outside the 1/4 distance, subtract the number of selections from the total number of daycare centers.
+Convert that number into a percent to answer Question #2 (hint: it's more than 50%).
 
+## Spatial Join and Making Estimates
 
+In order to answer our final question regarding the percent of children under five served by daycare centers "far" away from subway stations,
+we will need to perform a spatial join.
 
+* Deselect the daycare centers by navigating to `Selection` > `Clear Selected Features`. Right-click on `Subways_QuarterMiBuffer` and choose Joins and Relates > Join....
+* Uncheck the box next to the Subways_QuarterMiBuffer layer so that it is not visible on the map.
+* Create a quarter mile buffer around the daycare centers (`Geoprocessing` > `Buffer', input features are daycare centers, save the output 
+feature class as Daycares_QuarterMiBuffer, set the distance to 0.25 Miles and click `OK`).
+* Right-click on the Daycares_QuarterMiBuffer layer and select `Joins and Relates` > `Join...`
+* Choose `Join data from another layer based on a spatial location` from the drop-down menu.
+* Choose SubwayStations as the layer to join to this layer.
+* Since we just want to know which daycare centers are farther than 1/4 mile from a subway station, we don't necessarily need to compute a summary
+a summary, so don't check any of those boxes.
+* Save the output shapefile in your working directory as `Daycares_QuarterMiBuffer_SubwaysJoin`
+* Click `OK`.
+
+Right-click on the new layer, `Daycares_QuarterMiBuffer_SubwaysJoin`, and open the attribute table. The `count` field tells us how many subway
+stations are within the 1/4 buffer of each daycare center. Select the features in this layer that have a 0 as their record in the `count` field.
+Add the selected features to the map as a new layer. Save/export that layer as a shapefile called `Daycares_NoSubways` and add it to the map. 
+Remove the selections copy of `Daycares_QuarterMiBuffer_SubwaysJoin` and clear selections.
+
+How many children under 5 are served by these daycare centers (i.e. how many children under 5 live near these daycare centers)?
+
+First we will figure out how many children under 5 live in the census tracts that intersect one of our 1/4 buffers around daycares that are 
+more than 1/4 mile away from a subway station.
+
+* Use the select by location tool (target layer is TRACTS, source layer is 
