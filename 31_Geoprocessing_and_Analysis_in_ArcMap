@@ -1,11 +1,13 @@
 
 ## Premise
 
-We are interested at looking at access to daycare centers accross NYC. First, we want to evaluate if daycare centers are located in areas that have high numbers of children under 5 years old. Then we will evaluate which daycare centers are farthest from public transportation (subway stations).
+We are interested at looking at access to daycare centers accross NYC. First, we want to evaluate if daycare centers are located in 
+areas that have high numbers of children under 5 years old. Then we will evaluate which daycare centers are farthest from 
+public transportation (subway stations).
 
 ## Questions
 
-How many daycare centers are located within areas with a high number of children under five?
+What percent of daycare centers are located within areas with a high number of children under five?
 How many daycare centers are located farther than 1/4 mile away from a subway station? Where are those centers (borough, neighborhood)?
 How many children do those "far" daycare centers serve?
 
@@ -21,11 +23,26 @@ Download the data (same as previous week's lab, except Day Care Centers is a geo
 
 Add the three shapefiles and the csv to the data frame/table of contents.
 
-Join the `UnderFiveByTract` csv to the `NYC_TRACTS_2010` shapefile.
+**Join** the `UnderFiveByTract` csv to the `NYC_TRACTS_2010` shapefile.
 
 **Note:** Save your map project (as a .mxd) periodically.
 
+# Finding daycares near concentrations of children under 5
 
+How many daycares (or what percent of the total number of daycares) are located within census tracts where more than 15.5% of the population
+are children under five years old?
 
+* Navigate to menu `Selection` > `Select by Attributes`. Make sure the `TRACTS` layer is the active selection and the selection method is set to 
+`Create a New Selection`. **Double-click** `UFiveP`, click `>`, and type `15.5`. Your expression should look like this:
+`"UFiveP" > 15.5`. Click `OK`. In the bottom left-hand corner of the ArcMap window, you should see that 22 features were selected.
+
+* Right-click on the TRACTS layer and choose `Selection` > `Create Layer from Selected Features`. A new layer will appear on top. Save (`Export`)
+that new layer to your working directory as a shapefile called `NYC_tracts_kids`. Clear selection by navigating to menu item `Selection` > `Clear selected feautres`. 
+Remove the duplicate TRACTS selection layer. Resymbolize the NYC_tracts_kids layer so that you can see it clearly over the original TRACTS layer.
+Arrange the layers so that subway stations and daycares are the top two layers.
+
+* We will determine which daycare centers lie within these census tracts by using the select by location tool. Navigate to menu item `Selection` >
+`Select by location...`. Set the target layer to `DaycareCenters` and the source layer to `NYC_tracts_kids`. Set the selection methods
+for target layer features to `are within the source layer feature` and click `OK`.
 
 
