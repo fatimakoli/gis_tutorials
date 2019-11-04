@@ -1,30 +1,36 @@
 
 ## Premise
 
-We are interested at looking at access to daycare centers accross NYC. First, we want to evaluate if daycare centers are located in 
-areas that have high numbers of children under 5 years old. Then we will evaluate which daycare centers are farthest from 
-public transportation (subway stations).
+We are interested at looking at access to daycare centers accross NYC. First, we will determine the percent of daycare centers in NYC that are
+in areas with high concentrations of children under 5. Then, we will evaluate which daycare centers are farthest from 
+public transportation (subway stations). Finally, we want to find out how many children under 5 are served by daycare centers that are "far" 
+away from subway stations.
 
-## Questions
+## Deliverable
 
-What percent of daycare centers are located within areas with a high number of children under five (over 10% of population in a tract is
-children under five)?
-What percent of daycare centers are located farther than 1/4 mile away from a subway station? Where are those centers (borough, neighborhood)?
-How many children do those "far" daycare centers serve?
+A map showing a buffer around daycares that are 1/4 miles or more away from a subway station.
+
+Answer the following two questions:
+
+What percent of daycare centers are located in areas (i.e. tracts) with high concentrations of children under 5?
+What percent of daycare centers in NYC are located farther than 1/4 mile away from a subway station? 
+How many children under 5, total, do those "far" daycare centers serve?
 
 ## Before beginning
 
-Download the data (same as previous week's lab, except Day Care Centers is a geocoded shapefile of the daycare centers as points):
+Download the data (same as previous week's lab except Day Care Centers is a shapefile of the daycare centers as points, and adding subway stations layer):
 
-* [Day Care Centers](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/DAYCARECENTERS_NYC_CLEAN.xlsx)
+* [Day Care Centers](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/Day%20Care%20Center.zip)
+      **NOTE**: You will have to rename the layer "DaycareCenters" in the Catalog window once you open ArcMap.
 * [NYC_TRACTS_2010](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/2010Tracts-20191025T194412Z-001.zip). 
-      **NOTE**: You will have to rename the layer as NYC_TRACTS_2010 in the Catalog window once you open ArcMap.
+      **NOTE**: You will have to rename the layer in the Catalog window once you open ArcMap.
 * [UnderFiveByTract](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/UnderFivePopulation.xls). **NOTE**: You may have to save this file as a CSV after downloading it.
-* [Subway Stations] ()
+* [Subway Stations] (https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/Subway%20Stations.zip)
+**NOTE**: You will have to rename the layer SubwayStations in the Catalog window once you open ArcMap.
 
 Add the three shapefiles and the csv to the data frame/table of contents.
 
-**Join** the `UnderFiveByTract` csv to the `NYC_TRACTS_2010` shapefile.
+**Join** the `UnderFivePopulation` csv to the `TRACTS` shapefile.
 
 **Note:** Save your map project (as a .mxd) periodically.
 
@@ -35,7 +41,7 @@ are children under five years old?
 
 * Navigate to menu `Selection` > `Select by Attributes`. Make sure the `TRACTS` layer is the active selection and the selection method is set to 
 `Create a New Selection`. **Double-click** `UFiveP`, click `>`, and type `15.5`. Your expression should look like this:
-`"UFiveP" > 15.5`. Click `OK`. In the bottom left-hand corner of the ArcMap window, you should see that 22 features were selected.
+`"UFiveP" > 15.5`. Click `OK`. In the bottom left-hand corner of the ArcMap window, you should see how many features were selected.
 
 * Right-click on the TRACTS layer and choose `Selection` > `Create Layer from Selected Features`. A new layer will appear on top. Save (`Export`)
 that new layer to your working directory as a shapefile called `NYC_tracts_kids`. Clear selection by navigating to menu item `Selection` > `Clear selected feautres`. 
@@ -72,7 +78,7 @@ Next we will use the select by location tool to determine which daycare centers 
 * Click `OK`.
 * Open the attribute table of DaycareCenters. The selections show how many daycare centers are WITHIN a 1/4 mile of a subway station.
 In order to determine how many fall outside the 1/4 distance, subtract the number of selections from the total number of daycare centers.
-Convert that number into a percent to answer Question #2 (hint: it's more than 50%).
+Convert that number into a percent to answer Question #2.
 
 ## Spatial Join and Making Estimates
 
