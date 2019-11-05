@@ -1,8 +1,8 @@
 
 # Premise
 
-We are interested at looking at access to daycare centers accross NYC. First, we will determine the percent of daycare centers in NYC that are in areas with high concentrations of children under 5 years old. Then, we will evaluate which daycare centers are farthest from 
-public transportation (subway stations). Finally, we want to find out how many children under 5 are served by daycare centers that are "far" away from subway stations.
+*We are interested at looking at access to daycare centers accross NYC. First, we will determine the percent of daycare centers in NYC that are in areas with high concentrations of children under 5 years old. Then, we will evaluate which daycare centers are farthest from 
+public transportation (subway stations). Finally, we want to find out how many children under 5 are served by daycare centers that are "far" away from subway stations.*
 
 # Deliverable
 
@@ -10,9 +10,9 @@ A map showing a buffer around daycares that are 1/4 miles or more away from a su
 
 **Answer the following three questions:**
 
-What percent of daycare centers are located in areas (i.e. tracts) with high concentrations of children under 5?
-What percent of daycare centers in NYC are located farther than 1/4 mile away from a subway station? 
-How many children under 5, total, do those "far" daycare centers serve? (and, when you find this answer, include 1-2 sentences reflecting on whether this seems like a large number or not - and explain how you would know whether it's a large or small number)
+* What percent of daycare centers are located in areas (i.e. tracts) with high concentrations of children under 5?
+* What percent of daycare centers in NYC are located farther than 1/4 mile away from a subway station? 
+* How many children under 5, total, do those "far" daycare centers serve? (and, when you find this answer, include 1-2 sentences reflecting on whether this seems like a large number or not - and explain how you would know whether it's a large or small number)
 
 # Data and Preparation
 
