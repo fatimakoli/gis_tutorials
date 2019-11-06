@@ -27,9 +27,9 @@ Download the data (same as previous week's lab except Day Care Centers is a shap
      **NOTE**: You will have to rename the layer SubwayStations in the Catalog window once you open ArcMap.
 
 
-**Set a projected coordinate system in advance.** The projection for this lab will matter as we will be calculating area, which is only possible/accurate when calculated in a projected coordinate system. Right-click the data frame, select `Data Frame Properties...` > `Coordinate System` (tab). Paste `NAD_1983_UTM_Zone_18N` into the search box and hit enter. Select that projection and click `Apply`, then `OK`.
+**SET A PROJECTED COORDINATE SYSTEM IN ADVANCE.** The projection for this lab will matter as we will be calculating area, which is only possible/accurate when calculated in a projected coordinate system. Right-click the data frame (the white space where you would typically see the map in ArcMap), select `Data Frame Properties...` > `Coordinate System` (tab). Search for or nvaigate to `NAD 1983 State Plane NY Long Island` (feet or meters, but just remember which one you selected and use that going forward!). Select that projection and click `Apply`, then `OK`. 
 
-Add the three shapefiles and the table to the data frame/table of contents.
+Add the three shapefiles (transform them to the projected coordinate system as you add them!!) and the table to the data frame/table of contents.
 
 **Join** the`TRACTS` shapefile to the `UnderFivePopulation` table.
 
