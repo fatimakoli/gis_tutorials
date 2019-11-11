@@ -26,17 +26,17 @@ The main dataset we will be using in this tutorial is based on 311 data. For tho
 As you can see, the dataset is very interesting and a great resource for anyone studying New York. **Nevertheless, a word of caution is necessary**: many people use this dataset to describe and analyze conditions in New York; however, the 311 data doesn't describe the city, it describes the complaints people file, it is not about the city, it is about the complaints, and even though the complaints might tell us something about the city, the distinction is crucial. Every dataset has its own biases and the 311 dataset has very strong ones: it collects data ONLY about the people who complain and ONLY about what they choose to complain about. Again, this dataset is much more about the complaints and the people who complain than about the conditions in the city. There is no 1 to 1 relationship between the 311 complaints and the conditions in the ground. That being said, though, it is still a great resource and very fun to play with. You can find out more about the 311 service [here](http://www1.nyc.gov/311/).
 
 Other datasets we will be using are:
-* nybb - New York City boroughs. Originally downloaded from [here](http://www.nyc.gov/html/dcp/html/bytes/districts_download_metadata.shtml).
-* HYDRO - New York hydrography. Originally downloaded [here](https://data.cityofnewyork.us/Environment/Hydrography/drh3-e2fd).
-* hydropol - U.S. Hydrographic features. Originally downloaded from [here](http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/polygon).
-* tl_2015_36_bg - New York State census block groups. Originally downloaded from [here](https://www.census.gov/cgi-bin/geo/shapefiles/index.php). Here you should download the census block groups for New York state for 2015.
-* state - U.S. State Boundaries. Originally downloaded from [here](http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/polygon)
+* nybb - New York City boroughs. Download from [here](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/nybb_19c.zip).
+* hydropol - `Hydrographic Features`. Download from [here](https://www.bts.gov/archive/publications/national_transportation_atlas_database/2015/polygon).
+* NYC Roadbeds, download from [here](https://data.cityofnewyork.us/api/geospatial/xgwd-7vhd?method=export&format=Shapefile)
+* tl_2015_36_bg - New York State census block groups. Download from [here](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/tl_2019_36_bg.zip)
+* state - `U.S. State Boundaries`. Download from [here](https://www.bts.gov/archive/publications/national_transportation_atlas_database/2015/polygon)
 
 ### Creating Noise Maps of 311 Data in New York City
 #### Downloading 311 Data
 The first step in this tutorial is to select, filter and download the 311 data. The [NYC Open Data portal](https://nycopendata.socrata.com/) is a great resource for data related to New York City and it provides an easy way of accessing 311 data. In it's search bar type "311" and it should take you to a list of datasets related to 311 data. The one we are looking for is called "311 Service Requests from 2010 to Present". Alternatively, you might see a big yellow icon at the top of this page related to 311; this will also take you to the dataset. Open the "311 Service Requests from 2010 to Present" and then click on `view data` at the top of the page.
 
-Here, we need to filter the database to download only the records regarding noise complaints for the first 6 months of 2016. You could attempt to download records for a longer period of time, but the files might get too large. To filter the data do the following:
+Here, we need to filter the database to download only the records regarding noise complaints for 2019 so far. You could attempt to download records for a longer period of time, but the files might get too large. To filter the data do the following:
 * On the right-hand panel, where it says "Filter", create a small query with the drop-down menus. Where it says `Unique Key`, change it to `Complaint Type`. Keep the `is` and then type in "Noise" in the space below (The query should read 'Complaint type is noise'. Make sure there is a check-mark next to the word 'Noise'. You will see how the dataset is filtered and you only get the complaints of type 'Noise'.
 * Next, click on `Add a New Filter Condition` and create another query that reads `Created Date` `is between` "01/1/2019 12:00:00 AM" and "11/13/2019 12:00:00 AM". (or "11/14/2019 12:00:00 AM").
 You should now see the data only for 'Noise' complaints created between the start of 2019 through this week.
@@ -44,28 +44,20 @@ You should now see the data only for 'Noise' complaints created between the star
 * If you open your .csv file in Excel you will see that there are about 25,000 records and that they have both X and Y coordinates and Latitude and Longitude. In the next steps we will use these fields to add the 311 data to an ArcMap map.
 
 #### Adding CSV data to ArcMap
-* First, open ArcMap and add the following layers:
-  * nybb
-  * Roadbed
-  * HYDRO
+* First, open ArcMap and add the following layers, **IN THE FOLLOWING ORDER!**:
+  * nybb (BOROUGHS)
+  * Roadbed (you will have to rename in catalog window first)
   * hydropol
   * state
-* Organize your layers so that you have the water for New York on top, then boroughs, then the water for the country and the last the states.
+* After adding the layers to the data frame in the above order, then organize your layers so that you have the roadbeds for New York on top, then boroughs, then the water for the country and the last the states.
 * Now, to add the CSV file we downloaded, click on the `Add Data` button on the top toolbar (the one with the `+` sign).
 * In the menu that comes up, look for your .csv (311 data) file and add it to your map.
 * Once you've added your data to the map you need to create points based on some of the fields in the data. Just to check, right-click on the 311_Service_Requests layer and choose `Open`, you should see the attribute table with the data. Notice that there are columns for `Latitude` and `Longitude` and towards the end two more for `X Coordinate (State Plane)` and `Y Coordinate (State Plane)`. We can use either one of these pairs to plot points on the map. The difference is the projection these coordinates use: the first one uses WGS 1984 and the second one uses the State Plane coordinate reference system. For the purposes of this tutorial we will use latitude and longitude, but note that either one is fine, as long as you specify the corresponding coordinate reference system when you are plotting the points (in the next step). Close the attribute table.
 * Now, to actually plot points on the map do the following:
   * Right-click again on the 311 layer and select `Display XY Data...`.
-
-  ![Display XY Data](https://github.com/CenterForSpatialResearch/gis_tutorials/blob/master/Images/Tutorial_23/04_DisplayXY.png)
   * In the menu that appears, choose the fields for the X and the Y: `Longitude` for X and `Latitude` for Y.
   * Finally, in the bottom part, click on `Edit` to choose the right coordinate system for this data.
   * In the sub-menu that appears, navigate to the `Geographic Coordinate Systems` folder, in there open the `World` folder and choose `WGS 1984` as your coordinate system. Click `OK`.
-
-  ![Coordinate System](https://github.com/CenterForSpatialResearch/gis_tutorials/blob/master/Images/Tutorial_23/04_CoordinateSystem.png)
-  * Your final menu should look like this; make sure you've selected the right fields and the right coordinate system.
-
-  ![Display XY Menu](https://github.com/CenterForSpatialResearch/gis_tutorials/blob/master/Images/Tutorial_23/04_DisplayXY_Menu.png)
   * Once you click `OK` you will be asked if you want to add an `Object-ID Field` to the data, say `OK`.
   * Your points should now be displayed.
 * Even though your points are already on the map, this is just a temporary layer. If you remove the layer, you will need to go through the whole importing process to add them again. To avoid this, we need to export the layer as a shapefile:
