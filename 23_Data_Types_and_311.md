@@ -41,11 +41,8 @@ Once you've accessed the dataset you will see something like this:
 ![311 Dataset](https://github.com/CenterForSpatialResearch/gis_tutorials/blob/master/Images/Tutorial_23/01_311_Dataset.png)
 Here, we need to filter the database to download only the records regarding noise complaints for the first 6 months of 2016. You could attempt to download records for a longer period of time, but the files might get too large. To filter the data do the following:
 * On the right-hand panel, where it says "Filter", create a small query with the drop-down menus. Where it says `Unique Key`, change it to `Complaint Type`. Keep the `is` and then type in "Noise" in the space below (The query should read 'Complaint type is noise'. Make sure there is a check-mark next to the word 'Noise'. You will see how the dataset is filtered and you only get the complaints of type 'Noise'.
-* Next, click on `Add a New Filter Condition` and create another query that reads `Created Date` `is between` "01/1/2017 12:00:00 AM" and "07/1/2017 12:00:00 AM".
-You should now see the data only for 'Noise' complaints created between the start of 2017 and the end of June 2017.
-* Your filters should look something like this:
-
-![311 Filters](https://github.com/CenterForSpatialResearch/gis_tutorials/blob/master/Images/Tutorial_23/02_Filters.png)
+* Next, click on `Add a New Filter Condition` and create another query that reads `Created Date` `is between` "01/1/2019 12:00:00 AM" and "11/13/2019 12:00:00 AM". (or "11/14/2019 12:00:00 AM").
+You should now see the data only for 'Noise' complaints created between the start of 2019 through this week.
 * Finally, click on the `Export` button at the top right-hand corner of the site and choose the `CSV` format. Your file should start downloading then.
 * If you open your .csv file in Excel you will see that there are about 25,000 records and that they have both X and Y coordinates and Latitude and Longitude. In the next steps we will use these fields to add the 311 data to an ArcMap map.
 
@@ -91,7 +88,7 @@ The last step in creating a qualitative map of the 311 data is a simple one: we 
 
 ![Symbology](https://github.com/CenterForSpatialResearch/gis_tutorials/blob/master/Images/Tutorial_23/05_Symbology.png)
 * Once you've adjusted that, click 'OK'.
-* Finally, you need to change the appearance of the other layers, add a scale bar, legend, title, source and brief description, and export your map as a PDF file.
+* Finally, you need to change the appearance of the other layers, add a scale bar, legend, title, source and brief description, and export your map as a PDF file. (note the image below is for 2017, but you will have to make sure to note that your data are for 2019).
 
 ![Final Map](https://github.com/CenterForSpatialResearch/gis_tutorials/blob/master/Images/Tutorial_23/05_FinalMap.png)
 
@@ -147,9 +144,9 @@ Let's say you want to identify which census block group has the highest number o
 ![Classification Methods](https://github.com/CenterForSpatialResearch/gis_tutorials/blob/master/Images/Tutorial_23/09_Classification_Methods.png)
 
 
-Once you are finished with this go ahead and adjust colors, strokes and layer order. And finally, add a legend, title, explanation, source and a scale bar, and export your map as a PDF file. Your final map should look something like this:
+Once you are finished with this go ahead and adjust colors, strokes and layer order. And finally, add a legend, title, explanation, source and a scale bar, and export your map as a PDF file. Your final map should look something like this (except for 2019):
 
 ![Final Map](https://github.com/CenterForSpatialResearch/gis_tutorials/blob/master/Images/Tutorial_23/11_Final_Map.png)
 
 #### Deliverables
-Two PDF 311 data maps. They should both be of something different than 'noise' complaints. One should be a qualitative map, showing the location of each complaint, and the other should be a quantitative map, showing the number of complaints per census block group in New York City. Your maps should include proper legends, scale bars, titles, explanations and sources. Choose colors, line weights and fonts wisely.
+Two 311 data maps (exported as images saved in a single word doc). They should both be of something different than 'noise' complaints. One should be a qualitative map, showing the location of each complaint, and the other should be a quantitative map, showing the number of complaints per census block group in New York City. Your maps should include proper legends, scale bars, titles, explanations and sources. Choose colors, line weights and fonts wisely.
