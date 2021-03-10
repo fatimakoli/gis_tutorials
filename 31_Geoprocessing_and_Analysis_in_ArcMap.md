@@ -6,7 +6,7 @@ public transportation (subway stations). Finally, we want to find out how many c
 
 # Deliverable
 
-A map showing a buffer around daycares that are 1/4 miles or more away from a subway station.
+A map showing a buffer around daycares that are 1/4 miles or more away from a subway station and showing the distribution of children under 5. Your map should also include text answering the 3 questions. Do not answer them in the way that you would in a word doc submitting to us (ex. Q1: Answer). Rather, think about how you would want to present that information to an audience who wants to understand accessibility to daycare centers. 
 
 **Answer the following three questions:**
 
@@ -29,7 +29,7 @@ Download the data (in a future ab, you will see how the day care centers shapefi
 
 **SET A PROJECTED COORDINATE SYSTEM IN ADVANCE.** The projection for this lab will matter as we will be calculating area, which is only possible/accurate when calculated in a projected coordinate system. Right-click the data frame (the white space where you would typically see the map in ArcMap), select `Data Frame Properties...` > `Coordinate System` (tab). Search for or nvaigate to `NAD 1983 State Plane NY Long Island` (feet or meters, but just remember which one you selected and use that going forward!). Select that projection and click `Apply`, then `OK`. 
 
-Add the three shapefiles (transform them to the projected coordinate system as you add them!!) and the table to the data frame/table of contents.
+Add the three shapefiles (transform them to the projected coordinate system as you add them!!) and the table to the data frame/table of contents. (Note: Transform them just means to select Close when it gives you a Transformation warning. This does not mean to go into the Catalog and change the properties of the shapefile. If you do that, your buffers will end up filling the entire screen. If we wanted to convert a layer into a different projection, we would have to use a tool called Project. We don't need that in this context, but we will learn that in a future session.)
 
 **Join** the`TRACTS` shapefile to the `UnderFivePopulation` table.
 
@@ -40,7 +40,7 @@ Add the three shapefiles (transform them to the projected coordinate system as y
 How many daycares (or what percent of the total number of daycares) are located within census tracts where more than 15.5% of the population are children under five years old?
 
 * Navigate to menu `Selection` > `Select by Attributes`. Make sure the `TRACTS` layer is the active selection and the selection method is set to `Create a New Selection`. **Double-click** `UFiveP`, click `>`, and type `15.5`. Your expression should look like this:
-`"UFiveP" > 15.5`. Click `OK`. In the bottom left-hand corner of the ArcMap window, you should see how many features were selected.
+`"UFiveP" > 15.5`. (Your expression may look slightly different since it might have a prefix showing what file it is coming from, just make sure the right variable (UFiveP) is chosen.). Click `OK`. In the bottom left-hand corner of the ArcMap window, you should see how many features were selected.
 
 * Right-click on the TRACTS layer and choose `Selection` > `Create Layer from Selected Features`. A new layer will appear on top. Save (`Export`) that new layer to your working directory (e.g. `Daycare_Lab` folder) as a shapefile called `NYC_tracts_kids`. Clear selection by navigating to menu item `Selection` > `Clear selected feautres`. Remove the duplicate TRACTS selection layer. Open the attribute table of the `NYC_Tracts_Kids` layer and skim through the data. Note the areas where there are high concentrations of children - is there a pattern? 
 
