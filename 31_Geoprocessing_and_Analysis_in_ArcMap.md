@@ -16,7 +16,7 @@ A map showing a buffer around daycares that are 1/4 miles or more away from a su
 
 # Data and Preparation
 
-Download the data (same as previous week's lab except Day Care Centers is a shapefile of the daycare centers as points, and adding subway stations layer):
+Download the data (in a future ab, you will see how the day care centers shapefile was created from a csv of addresses):
 
 * [Day Care Centers](https://github.com/alisaalias/gis_tutorials/blob/alisaalias-patch-1/data/Day%20Care%20Center.zip)
       **NOTE**: You will have to rename the layer "DaycareCenters" in the Catalog window once you open ArcMap.
@@ -33,7 +33,7 @@ Add the three shapefiles (transform them to the projected coordinate system as y
 
 **Join** the`TRACTS` shapefile to the `UnderFivePopulation` table.
 
-**Note:** Save your map project (as a .mxd) periodically. Also, we will be creating **many** new layers/shapefiles in this lab and will need to save them all in the same folder. We recommend creating a new folder in your USB drive called `Daycare_Lab_2` or something like that. As you create these new shapefiles, we encourage you to explore their geometries - open the attribute tables and think about what each record looks like in space and where it is located.
+**Note:** Save your map project (as a .mxd) periodically. Also, we will be creating **many** new layers/shapefiles in this lab and will need to save them all in the same folder. As you create these new shapefiles, we encourage you to explore their geometries - open the attribute tables and think about what each record looks like in space and where it is located.
 
 **Finding daycares near concentrations of children under 5**
 
@@ -42,11 +42,13 @@ How many daycares (or what percent of the total number of daycares) are located 
 * Navigate to menu `Selection` > `Select by Attributes`. Make sure the `TRACTS` layer is the active selection and the selection method is set to `Create a New Selection`. **Double-click** `UFiveP`, click `>`, and type `15.5`. Your expression should look like this:
 `"UFiveP" > 15.5`. Click `OK`. In the bottom left-hand corner of the ArcMap window, you should see how many features were selected.
 
-* Right-click on the TRACTS layer and choose `Selection` > `Create Layer from Selected Features`. A new layer will appear on top. Save (`Export`) that new layer to your working directory (e.g. `Daycare_Lab_2` folder) as a shapefile called `NYC_tracts_kids`. Clear selection by navigating to menu item `Selection` > `Clear selected feautres`. Remove the duplicate TRACTS selection layer. Open the attribute table of the `NYC_Tracts_Kids` layer and skim through the data. Note the areas where there are high concentrations of children - is there a pattern? 
+* Right-click on the TRACTS layer and choose `Selection` > `Create Layer from Selected Features`. A new layer will appear on top. Save (`Export`) that new layer to your working directory (e.g. `Daycare_Lab` folder) as a shapefile called `NYC_tracts_kids`. Clear selection by navigating to menu item `Selection` > `Clear selected feautres`. Remove the duplicate TRACTS selection layer. Open the attribute table of the `NYC_Tracts_Kids` layer and skim through the data. Note the areas where there are high concentrations of children - is there a pattern? 
 
 Resymbolize the `NYC_tracts_kids` layer so that you can see it clearly over the original `TRACTS` layer. Arrange the layers so that subway stations and daycares are the top two layers.
 
 * We will determine which daycare centers lie within these census tracts by using the select by location tool. Navigate to menu item `Selection` > `Select by location...`. Set the target layer to `DaycareCenters` and the source layer to `NYC_tracts_kids`. Set the selection methods for target layer features to `are within the source layer feature` and click `OK`.
+
+(Note that you don't have to create a new shapefile to be able to do this selection. After you'd selected census tracts where more than 15.5% of the population are children under five years old, yoou could have gone to the Select by Location tool and checked off the option under Source Layer to `Use selected features`. Then it would only check the spatial relationship for those selected features.) 
 
 * Open the attribute table of `DaycareCenters` to see how many day care centers were selected. What percent of the total number of daycare centers fall within these tracts (divide the selected number by the total and multiply that number by 100)?
 
